@@ -1,1 +1,64 @@
+* {
+	font-family: 'Courier New', Courier, monospace;
+}
 
+body {
+	background-color: aliceblue;
+	color: rgb(42, 42, 72);
+	margin: 1vh;
+}
+
+
+/***** TITRE DE SITE *****/
+.titre {
+	font-size: 48px;
+	font-weight: 700;
+	margin: 4vh 2vh 2vh 4vh;
+}
+
+
+/***** MENU HORIZONTAL *****/
+nav {
+	height: 80px;
+	width: 800px;
+	margin: 3vh 2vh 2vh 3vh;
+}
+
+nav .page-btn {
+	justify-content: space-between;
+	font-size: 36;
+	font-weight: 500;
+	text-decoration: none;
+	color: rgb(42, 42, 72);
+	border: rgb(42, 42, 72) 2px solid;
+	border-radius: 12px;
+	padding: 12px;
+	background-color: aliceblue;
+}
+
+nav .page-btn:active {
+	background-color: rgb(215, 220, 225);
+}
+
+
+/***** TITRE DE PAGE *****/
+.page {
+	font-size: 36px;
+	font-weight: 700;
+	margin-left: 4vh;
+}
+
+
+/***** BIENVEILLANCE ET MESSAGE D'ALER *****/
+.important {
+	width: 55%;
+	margin-left: 4vh;
+}
+
+.important h2 {
+	font-size: 24px;
+}
+
+.important p {
+	font-size: 18px;
+}

@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>TSA-TDAH Questionnaire</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
   </head>
   <body>
     <header>
-      <h1>Questionnaire</h1>
+      <h1 class="titre">TSA-TDAH Questionnaire</h1>
     </header>
     <nav>
-      <a href="/ctsa-tdah-questionnaire/index.html">Accueil</a>
-      <a href="/ctsa-tdah-questionnaire/pages/test-1-">Échelle de Conners</a>
+      <a href="/ctsa-tdah-questionnaire/index.html" class="page-btn">Accueil</a>
+      <a href="/ctsa-tdah-questionnaire/pages/test-1-" class="page-btn">Échelle de Conners</a>
     </nav>
     <div>
-      <h2>Échelle de Conners</h2>
+      <h2 class="page">Échelle de Conners</h2>
     </div>
-    <div>
+    <div class="important">
       <h2>Attention!</h2>
       <p>Ces questionnaires sont des outils indificatifs. Ils ne replacement en aucun cas un diagnostic médical réalisé par un professionnel de santé.</p>
     </div>
