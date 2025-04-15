@@ -1,11 +1,101 @@
 * {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Arial', Courier, monospace;
 }
 
 body {
 	background-color: aliceblue;
-	color: rgb(42, 42, 72);
-	margin: 1vh;
+	color: rgb(42, 52, 82);
+	margin: 5px;
+}
+
+
+/******* PAGE DE COMMENCER *******/
+
+/*** Header ***/
+header {
+	display: flex;
+	width: 95%;
+	height: 20%;
+	max-height: 400px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header img {
+	width: 50%;
+	height: auto;
+	max-width: 400px;
+}
+
+header .page-btn {
+	font-size: 28px;
+	padding: 5px;
+	text-decoration: none;
+	margin: 5px;
+	color: rgb(42, 52, 82);
+}
+
+
+/*** Main ***/
+main {
+	width: 95%;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.premiere {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.premiere h1 {
+	font-size: 40px;
+	font-weight: 700;
+	max-width: 440px;
+	margin-bottom: 20px;
+}
+
+.premiere p {
+	font-size: 24px;
+	max-width: 440px;
+	margin-bottom: 80px;
+}
+
+.premiere a {
+	width: 30vh;
+	font-size: 28px;
+	font-weight: 700;
+	text-decoration: none;
+	border: 2px solid rgb(80, 80, 188);
+	background-color: rgb(80, 80, 188);
+	border-radius: 18px;
+	color: aliceblue;
+	padding: 12px;
+}
+
+.dessin {
+	width: 50%;
+	height: auto;
+	max-width: 640px;
+}
+
+
+/*** Secondaire ***/
+.secondaire {
+	display: flex;
+	width: 100%;
+	max-height: 400px;
+	background-color: rgb(220, 230, 240);
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.secondaire {
+	font-size: 32px;
 }
 
 
