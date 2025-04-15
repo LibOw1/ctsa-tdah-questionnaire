@@ -127,6 +127,7 @@ body {
 .ins-main p {
 	font-size: 20px;
 	margin: 5px;
+	margin-left: 10px;
 }
 
 .ins-main input {
@@ -137,11 +138,34 @@ body {
 	border-radius: 6px;
 }
 
-.ins-main label {
+.convention {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 520px;
+	justify-content: space-between;
+}
+
+.convention label {
 	display: flex;
 	align-items: center;
 	flex-wrap: nowrap;
-	width: 280px;
+	width: 250px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.convention a {
+	margin: 3px;
+}
+
+.ins-btns {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 300px;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /***** TITRE DE SITE *****/
