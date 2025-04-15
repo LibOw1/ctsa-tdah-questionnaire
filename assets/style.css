@@ -1,3 +1,4 @@
+/******* GENERAL *******/
 * {
 	font-family: 'Arial', Courier, monospace;
 }
@@ -11,33 +12,40 @@ body {
 
 /******* PAGE DE COMMENCER *******/
 
-/*** Header ***/
-header {
+/*** COMMENCER HEADER ***/
+.com-header {
 	display: flex;
-	width: 95%;
+	width: 100%;
 	height: 20%;
 	max-height: 400px;
 	justify-content: space-between;
 	align-items: center;
 }
 
-header img {
+.com-header img {
 	width: 50%;
 	height: auto;
 	max-width: 400px;
+	margin-left: 5vh;
 }
 
-header .page-btn {
+.com-header .page-btn {
 	font-size: 28px;
-	padding: 5px;
+	padding: 8px;
+	border: none;
 	text-decoration: none;
-	margin: 5px;
+	margin: 8px;
 	color: rgb(42, 52, 82);
 }
 
+.com-header .page-btn:hover {
+	border-bottom: 2px solid rgb(42, 52, 82);
+	border-radius: 0px;
+}
 
-/*** Main ***/
-main {
+
+/*** COMMENCER MAIN ***/
+.com-main {
 	width: 95%;
 	height: 80%;
 	display: flex;
@@ -45,26 +53,26 @@ main {
 	justify-content: space-evenly;
 }
 
-.premiere {
+.com-1 {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 }
 
-.premiere h1 {
+.com-1 h1 {
 	font-size: 40px;
 	font-weight: 700;
 	max-width: 440px;
 	margin-bottom: 20px;
 }
 
-.premiere p {
+.com-1 p {
 	font-size: 24px;
 	max-width: 440px;
 	margin-bottom: 80px;
 }
 
-.premiere a {
+.com-1 a {
 	width: 30vh;
 	font-size: 28px;
 	font-weight: 700;
@@ -82,22 +90,59 @@ main {
 	max-width: 640px;
 }
 
-
-/*** Secondaire ***/
-.secondaire {
+.com-2 {
 	display: flex;
 	width: 100%;
 	max-height: 400px;
+	font-size: 32px;
 	background-color: rgb(220, 230, 240);
 	justify-content: space-evenly;
 	align-items: center;
 	margin-top: 20px;
 }
 
-.secondaire {
-	font-size: 32px;
+
+/******* PAGE D'INSCRIPTION' *******/
+
+/*** INSCRIPTION HEADER ***/
+.ins-header {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 20vh;
 }
 
+.ins-main {
+	width: 100%;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.ins-main p {
+	font-size: 20px;
+	margin: 5px;
+}
+
+.ins-main input {
+	font-size: 20px;
+	margin: 5px;
+	border: solid 2px rgb(42, 52, 82);
+	background-color: aliceblue;
+	border-radius: 6px;
+}
+
+.ins-main label {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 280px;
+}
 
 /***** TITRE DE SITE *****/
 .titre {
