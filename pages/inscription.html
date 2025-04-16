@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
   </head>
   <body>
-    <header class="ins-header"> <!-- ins = inscription -->
+    <header class="inscription-h"> <!-- h = header -->
       <h1>Création de Compte</h1>
     </header>
-    <main class="ins-main">
+    <main class="inscription-m"> <!-- m = main -->
       <div>
 				<p>Entrez votre prénom</p>
 				<input type="text" placeholder="Prénom" required>
@@ -20,15 +20,17 @@
 				<p>Mot de passe sécurité</p>
 				<input type="email" placeholder="Votre mot de passe" required>
       </div>
-			<div class="convention">
+			<div class="cvg-check">
 				<label><input type="checkbox" required>J'accepte que mes données soient utilisées dans le cadre du suivi par la psychologue</label>
 				<label><input type="checkbox" required>J'accepte les <a href="/ctsa-tdah-questionnaire/docs/CGV.pdf" target="_blank">Conditions Générales</a></label>
 			</div>
-			<div class="ins-btns">
-				<button>Créer mon Compte</button>
-				<p>Vous avez déjà un compte?</p>
-				<a href="">Se connecter</a>
-			</div>
+				<button type="submit" class="creer">Créer mon Compte</button>
+				<p class="connecter">Vous avez déjà un compte?<a href="">Se connecter</a></p>
     </main>
+		<footer class="footer">
+			<a href="docs/mentionLegale.pdf" target="_blank">Mentions légales</a>
+			<a href="docs/CGV.pdf" target="_blank">Conditions Générales de Vente</a>
+			<a href="docs/RGPD.pdf" target="_blank">Politique de confidentialité (RGPD)</a>
+		</footer>
   </body>
 </html>
