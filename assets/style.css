@@ -4,72 +4,77 @@
 }
 
 body {
-	background-color: aliceblue;
-	color: rgb(42, 52, 82);
-	margin: 5px;
+	background-color: #f4f4fa;
+	color: #2a2a2a;
+	margin: 0px;
 }
 
 footer {
-  background-color: #d0d0d0;
+  background-color: #2f2f45;
   padding: 40px;
   text-align: center;
-  margin-top: 120px;
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
 footer a {
-  color: #333;
+	color: #f4f4fa;
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.2s;
 }
 
 footer a:hover {
-  color: rgb(80, 80, 188);
+  color: #9ecbf8;
+}
+
+img {
+	pointer-events: none;
 }
 
 
 
-
 /******* PAGE DE COMMENCER *******/
-.commencer-h {
+.page-header {
 	display: flex;
-	width: 100%;
+	width: 97%;
 	height: 20%;
 	max-height: 400px;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.commencer-h img {
+.page-header img {
 	width: 50%;
 	height: auto;
 	max-width: 400px;
 	margin-left: 5vh;
 }
 
-.commencer-h .page-btn {
+.page-header .page-btn {
 	font-size: 28px;
 	padding: 8px;
-	border: none;
 	text-decoration: none;
 	margin: 8px;
-	color: rgb(42, 52, 82);
+	color: rgba(42, 42, 42, 0.5);
+	border-top: 2px solid rgba(42, 42, 42, 0.5);
+	border-bottom: 2px solid rgba(42, 42, 42, 0.5);
+	transition: color 0.2s;
 }
 
-.commencer-h .page-btn:hover {
-	border-bottom: 2px solid rgb(42, 52, 82);
-	border-radius: 0px;
+.page-header .page-btn:hover {
+	color: #2a2a2a;
+	border-top: 2px solid #2a2a2a;
+	border-bottom: 2px solid #2a2a2a;
 }
 
-.commencer-h .page-btn:active {
-	border-bottom: 2px solid rgb(42, 52, 82);
-	border-radius: 0px;
-	background-color: rgb(205, 210, 215);
+.page-header .page-btn:active {
+	color: #4480bb;
+	border-bottom: 2px solid #4480bb;
+	border-top: 2px solid #4480bb;
 }
 
-.commencer-m {
+.page-main {
 	width: 95%;
 	height: 80%;
 	display: flex;
@@ -77,41 +82,49 @@ footer a:hover {
 	justify-content: space-evenly;
 }
 
-.commencer-1 {
+.intro-block {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 }
 
-.commencer-1 h1 {
+.intro-block h1 {
 	font-size: 40px;
 	font-weight: 700;
 	max-width: 440px;
 	margin-bottom: 20px;
 }
 
-.commencer-1 p {
+.intro-block p {
 	font-size: 24px;
 	max-width: 440px;
 	margin-bottom: 80px;
 }
 
-.commencer-1 a {
+.intro-block a {
 	width: 30vh;
 	font-size: 28px;
 	font-weight: 700;
 	text-decoration: none;
-	border: none;
-	background-color: rgb(80, 80, 188);
-	border-radius: 18px;
-	color: aliceblue;
+	background-color: rgba(80, 68, 175, 0.6);
+	color: rgba(244, 244, 250, 0.8);
+	border: 2px solid rgba(80, 68, 175, 0.3);
+	border-radius: 15px;
 	padding: 12px;
 	margin-top: 20px;
+	transition: color 0.2s;
 }
 
-.commencer-1 a:active {
-	background-color: rgb(63, 63, 149);
-	color: rgb(205, 210, 215);
+.intro-block a:hover {
+	background-color: #807eda;
+	color: #f4f4fa;
+	border: 2px solid #5044af;
+}
+
+.intro-block a:active {
+	background-color: #f4f4fa;
+	color: #2a2a2a;
+	border: 2px solid #5044af;
 }
 
 .dessin {
@@ -120,12 +133,12 @@ footer a:hover {
 	max-width: 640px;
 }
 
-.commencer-2 {
+.info-block {
 	display: flex;
 	width: 100%;
 	max-height: 400px;
 	font-size: 32px;
-	background-color: rgb(220, 230, 240);
+	background-color: rgba(158, 203, 248, 0.6);
 	justify-content: space-evenly;
 	align-items: center;
 	margin-top: 40px;
@@ -135,37 +148,39 @@ footer a:hover {
 
 
 /******* PAGE D'INSCRIPTION' *******/
-.inscription-h {
+.inscription-main {
 	width: 100%;
-	height: 20%;
+	height: 60%;
+	display: flex;
+	background-color: #efe5fb;
+}
+
+.inscription-cont {
+	width: 100%;
+	height: 60%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	align-items: center;
+}
+
+.inscription-cont h1 {
+	justify-content: center;
 	align-items: center;
 	margin-top: 20vh;
 }
 
-.inscription-m {
-	width: 100%;
-	height: 60%;
-	min-height: 510px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.inscription-m p {
+.inscription-cont p {
 	font-size: 20px;
 	margin-bottom: 0px;
 	margin-left: 2px;
 }
 
-.inscription-m input {
+.inscription-cont input {
 	font-size: 20px;
 	margin: 5px;
-	border: solid 2px rgb(42, 52, 82);
-	background-color: aliceblue;
-	border-radius: 8px;
+	border: solid 2px #2a2a2a;
+	background-color: #f4f4fa;
+	border-radius: 5px;
 }
 
 .cvg-check {
@@ -192,23 +207,28 @@ footer a:hover {
 .creer-btn {
 	width: 250px;
 	height: 50px;
-	background-color: rgb(80, 80, 188);
-	border: none;
-	color: aliceblue;
+	background-color: rgba(80, 68, 175, 0.6);
+	color: rgba(244, 244, 250, 0.8);
+	border: 2px solid rgba(80, 68, 175, 0.3);
 	border-radius: 15px;
 	font-size: 24px;
 	font-weight: 700;
 	margin-top: 20px;
 	margin-bottom: 5px;
+	transition: color 0.2s;
 }
 
 .creer-btn:hover {
 	cursor: pointer;
+	background-color: #807eda;
+	color: #f4f4fa;
+	border: 2px solid #5044af;
 }
 
 .creer-btn:active {
-	background-color: rgb(63, 63, 149);
-	color: rgb(205, 210, 215);
+	background-color: #f4f4fa;
+	color: #2a2a2a;
+	border: 2px solid #5044af;
 }
 
 .connecter a {
@@ -229,9 +249,9 @@ footer a:hover {
 .connecter-btn {
 	width: 180px;
 	height: 50px;
-	background-color: rgb(80, 80, 188);
-	border: none;
-	color: aliceblue;
+	background-color: rgba(80, 68, 175, 0.6);
+	color: rgba(244, 244, 250, 0.8);
+	border: 2px solid rgba(80, 68, 175, 0.3);
 	border-radius: 15px;
 	font-size: 24px;
 	font-weight: 700;
@@ -241,15 +261,19 @@ footer a:hover {
 
 .connecter-btn:hover {
 	cursor: pointer;
+	background-color: #807eda;
+	color: #f4f4fa;
+	border: 2px solid #5044af;
 }
 
 .connecter-btn:active {
-	background-color: rgb(63, 63, 149);
-	color: rgb(205, 210, 215);
+	background-color: #f4f4fa;
+	color: #2a2a2a;
+	border: 2px solid #5044af;
 }
 
 .creer a {
-	margin-left: 5px;
+	margin-left: 3px;
 }
 
 
@@ -264,23 +288,6 @@ footer a:hover {
 
 
 /***** MENU HORIZONTAL *****/
-nav {
-	height: 80px;
-	width: 800px;
-	margin: 3vh 2vh 2vh 3vh;
-}
-
-nav .page-btn {
-	justify-content: space-between;
-	font-size: 36;
-	font-weight: 500;
-	text-decoration: none;
-	color: rgb(42, 42, 72);
-	border: rgb(42, 42, 72) 2px solid;
-	border-radius: 12px;
-	padding: 12px;
-	background-color: aliceblue;
-}
 
 
 /***** TITRE DE PAGE *****/
