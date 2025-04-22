@@ -305,6 +305,11 @@ img {
 	margin-top: 5px;
 }
 
+.instructions span {
+	font-weight: 700;
+	margin: 0 5px;
+}
+
 .test-form {
   width: 50%;
 	display: flex;
@@ -342,4 +347,19 @@ img {
   display: block;
   margin: 3px 12px;
   font-size: 19px;
+}
+
+.question-tableau {
+	margin-top: 40px;
+}
+
+.question-tableau .question-block {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.question-tableau p {
+	font-size: 22px;
 }
