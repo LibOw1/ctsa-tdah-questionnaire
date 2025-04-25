@@ -4,312 +4,316 @@
   <meta charset="UTF-8">
   <title>Questionnaire des Traumatismes de l’Enfance (CTQ)</title>
   <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-	<header class="page-header">
-		<img src="/ctsa-tdah-questionnaire/assets/images/logo.png" alt="logo">
-    <nav>
-      <a href="/ctsa-tdah-questionnaire/pages/page-ASRS.html" class="page-btn">Échelle ASRS</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-Wender.html" class="page-btn">Test Wender</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-RCTQ.html" class="page-btn">RCTQ-13</a>
-			<a href="/ctsa-tdah-questionnaire/pages/page-UPPS.html" class="page-btn">UPPS-20</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-CTQ.html" class="page-btn">CTQ</a>
-      <a href="/ctsa-tdah-questionnaire/pages/accueil.html" class="page-btn">Accueil</a>
-      <a href="" class="page-btn">Contact</a>
-    </nav>
-	</header>
-  <main class="test-main">
-    <div class="titre-de-page">
-      <h1>Questionnaire des Traumatismes de l’Enfance (CTQ)</h1>
-    </div>
-    <div class="instructions">
-      <h3>Instructions</h3>
-      <p>Lisez chaque affirmation en pensant à votre enfance et/ou adolescence. Pour chaque phrase, cochez la case qui correspond le mieux à la fréquence avec laquelle vous avez vécu cette situation: <span>Jamais</span> – <span>Rarement</span> – <span>Quelquefois</span> – <span>Souvent</span> – <span>Très souvent</span></p>
-    </div>
-    <form class="test-form">
-      <div class="question-block">
-        <p>1. Il m’est arrivé de ne pas avoir assez à manger.</p>
-        <div class="options">
-        <label><input type="radio" name="q1" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q1" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q1" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q1" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q1" value="très-souvent"> Très souvent</label>
-        </div>
+  <div id="app">
+    <header class="page-header">
+      <img src="/ctsa-tdah-questionnaire/assets/images/logo.png" alt="logo">
+      <nav>
+        <a href="/ctsa-tdah-questionnaire/pages/page-ASRS.html" class="page-btn">Échelle ASRS</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-Wender.html" class="page-btn">Test Wender</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-RCTQ.html" class="page-btn">RCTQ-13</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-UPPS.html" class="page-btn">UPPS-20</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-CTQ.html" class="page-btn">CTQ</a>
+        <a href="/ctsa-tdah-questionnaire/pages/accueil.html" class="page-btn">Accueil</a>
+        <a href="" class="page-btn">Contact</a>
+      </nav>
+    </header>
+    <main class="test-main">
+      <div class="titre-de-page">
+        <h1>Questionnaire des Traumatismes de l’Enfance (CTQ)</h1>
       </div>
-      <div class="question-block">
-        <p>2. Je savais qu’il y avait quelqu’un pour prendre soin de moi et me protéger.</p>
-        <div class="options">
-        <label><input type="radio" name="q2" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q2" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q2" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q2" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q2" value="très-souvent"> Très souvent</label>
-        </div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <p>Lisez chaque affirmation en pensant à votre enfance et/ou adolescence. Pour chaque phrase, cochez la case qui correspond le mieux à la fréquence avec laquelle vous avez vécu cette situation: <span>Jamais</span> – <span>Rarement</span> – <span>Quelquefois</span> – <span>Souvent</span> – <span>Très souvent</span></p>
       </div>
-      <div class="question-block">
-        <p>3. Des membres de ma famille me disaient que j’étais "stupide, paresseux" ou "laid".</p>
-        <div class="options">
-        <label><input type="radio" name="q3" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q3" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q3" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q3" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q3" value="très-souvent"> Très souvent</label>
+      <form class="test-form">
+        <div class="question-block">
+          <p>1. Il m’est arrivé de ne pas avoir assez à manger.</p>
+          <div class="options">
+          <label><input type="radio" name="q1" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q1" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q1" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q1" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q1" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>4. Mes parents étaient trop saouls ou « pétés » pour s’occuper de la famille.</p>
-        <div class="options">
-        <label><input type="radio" name="q4" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q4" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q4" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q4" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q4" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>2. Je savais qu’il y avait quelqu’un pour prendre soin de moi et me protéger.</p>
+          <div class="options">
+          <label><input type="radio" name="q2" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q2" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q2" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q2" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q2" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>5. Il y avait quelqu’un dans ma famille qui m’aidait à sentir que j’étais important ou particulier.</p>
-        <div class="options">
-        <label><input type="radio" name="q5" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q5" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q5" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q5" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q5" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>3. Des membres de ma famille me disaient que j’étais "stupide, paresseux" ou "laid".</p>
+          <div class="options">
+          <label><input type="radio" name="q3" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q3" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q3" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q3" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q3" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>6. Je devais porter des vêtements sales.</p>
-        <div class="options">
-        <label><input type="radio" name="q6" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q6" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q6" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q6" value="souvent"> Souvent</label>
-        
-        <label><input type="radio" name="q6" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>4. Mes parents étaient trop saouls ou « pétés » pour s’occuper de la famille.</p>
+          <div class="options">
+          <label><input type="radio" name="q4" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q4" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q4" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q4" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q4" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>7. Je me sentais aimé(e).</p>
-        <div class="options">
-        <label><input type="radio" name="q7" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q7" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q7" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q7" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q7" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>5. Il y avait quelqu’un dans ma famille qui m’aidait à sentir que j’étais important ou particulier.</p>
+          <div class="options">
+          <label><input type="radio" name="q5" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q5" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q5" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q5" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q5" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>8. Je pensais que mes parents n’avaient pas souhaité ma naissance.</p>
-        <div class="options">
-        <label><input type="radio" name="q8" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q8" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q8" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q8" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q8" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>6. Je devais porter des vêtements sales.</p>
+          <div class="options">
+          <label><input type="radio" name="q6" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q6" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q6" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q6" value="souvent"> Souvent</label>
+          
+          <label><input type="radio" name="q6" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>9. J’ai été frappé(e) si fort par un membre de ma famille que j’ai dû consulter un docteur ou aller à l’hôpital.</p>
-        <div class="options">
-        <label><input type="radio" name="q9" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q9" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q9" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q9" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q9" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>7. Je me sentais aimé(e).</p>
+          <div class="options">
+          <label><input type="radio" name="q7" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q7" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q7" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q7" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q7" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>10. Je n’aurais rien voulu changer à ma famille.</p>
-        <div class="options">
-        <label><input type="radio" name="q10" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q10" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q10" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q10" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q10" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>8. Je pensais que mes parents n’avaient pas souhaité ma naissance.</p>
+          <div class="options">
+          <label><input type="radio" name="q8" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q8" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q8" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q8" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q8" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>11. Un membre de ma famille m’a frappé(e) si fort que j’ai eu des bleus ou des marques.</p>
-        <div class="options">
-        <label><input type="radio" name="q11" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q11" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q11" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q11" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q11" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>9. J’ai été frappé(e) si fort par un membre de ma famille que j’ai dû consulter un docteur ou aller à l’hôpital.</p>
+          <div class="options">
+          <label><input type="radio" name="q9" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q9" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q9" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q9" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q9" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>12. J’étais puni(e) au moyen d’une ceinture, d’un bâton, d’une corde ou un autre objet dur.</p>
-        <div class="options">
-        <label><input type="radio" name="q12" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q12" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q12" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q12" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q12" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>10. Je n’aurais rien voulu changer à ma famille.</p>
+          <div class="options">
+          <label><input type="radio" name="q10" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q10" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q10" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q10" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q10" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>13. Les membres de ma famille étaient attentifs les uns aux autres.</p>
-        <div class="options">
-        <label><input type="radio" name="q13" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q13" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q13" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q13" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q13" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>11. Un membre de ma famille m’a frappé(e) si fort que j’ai eu des bleus ou des marques.</p>
+          <div class="options">
+          <label><input type="radio" name="q11" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q11" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q11" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q11" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q11" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>14. Des membres de ma famille me disaient des choses blessantes ou insultantes.</p>
-        <div class="options">
-        <label><input type="radio" name="q14" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q14" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q14" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q14" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q14" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>12. J’étais puni(e) au moyen d’une ceinture, d’un bâton, d’une corde ou un autre objet dur.</p>
+          <div class="options">
+          <label><input type="radio" name="q12" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q12" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q12" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q12" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q12" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>15. Je pense que j’ai été physiquement maltraité(e).</p>
-        <div class="options">
-        <label><input type="radio" name="q15" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q15" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q15" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q15" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q15" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>13. Les membres de ma famille étaient attentifs les uns aux autres.</p>
+          <div class="options">
+          <label><input type="radio" name="q13" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q13" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q13" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q13" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q13" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>16. J’ai eu une enfance parfaite.</p>
-        <div class="options">
-        <label><input type="radio" name="q16" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q16" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q16" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q16" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q16" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>14. Des membres de ma famille me disaient des choses blessantes ou insultantes.</p>
+          <div class="options">
+          <label><input type="radio" name="q14" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q14" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q14" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q14" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q14" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>17. J’ai été frappé(e) ou battu(e) si fort que quelqu’un l’a remarqué (par ex. un professeur, un voisin ou l’hôpital).</p>
-        <div class="options">
-        <label><input type="radio" name="q17" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q17" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q17" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q17" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q17" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>15. Je pense que j’ai été physiquement maltraité(e).</p>
+          <div class="options">
+          <label><input type="radio" name="q15" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q15" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q15" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q15" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q15" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>18. J’avais le sentiment que quelqu’un dans ma famille me détestait.</p>
-        <div class="options">
-        <label><input type="radio" name="q18" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q18" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q18" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q18" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q18" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>16. J’ai eu une enfance parfaite.</p>
+          <div class="options">
+          <label><input type="radio" name="q16" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q16" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q16" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q16" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q16" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>19. Les membres de ma famille se sentaient proches les uns des autres.</p>
-        <div class="options">
-        <label><input type="radio" name="q19" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q19" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q19" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q19" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q19" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>17. J’ai été frappé(e) ou battu(e) si fort que quelqu’un l’a remarqué (par ex. un professeur, un voisin ou l’hôpital).</p>
+          <div class="options">
+          <label><input type="radio" name="q17" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q17" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q17" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q17" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q17" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>20. Quelqu’un a essayé de me faire des attouchements sexuels ou de m’en faire faire.</p>
-        <div class="options">
-        <label><input type="radio" name="q20" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q20" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q20" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q20" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q20" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>18. J’avais le sentiment que quelqu’un dans ma famille me détestait.</p>
+          <div class="options">
+          <label><input type="radio" name="q18" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q18" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q18" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q18" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q18" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>21. Quelqu’un a menacé de me blesser ou de raconter des mensonges à mon sujet, si je ne faisais pas quelque chose de nature sexuelle avec lui.</p>
-        <div class="options">
-        <label><input type="radio" name="q21" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q21" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q21" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q21" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q21" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>19. Les membres de ma famille se sentaient proches les uns des autres.</p>
+          <div class="options">
+          <label><input type="radio" name="q19" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q19" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q19" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q19" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q19" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>22. J’avais la meilleure famille du monde.</p>
-        <div class="options">
-        <label><input type="radio" name="q22" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q22" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q22" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q22" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q22" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>20. Quelqu’un a essayé de me faire des attouchements sexuels ou de m’en faire faire.</p>
+          <div class="options">
+          <label><input type="radio" name="q20" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q20" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q20" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q20" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q20" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>23. Quelqu’un a essayé de me faire faire des actes sexuels ou de me faire regarder de tels actes.</p>
-        <div class="options">
-        <label><input type="radio" name="q23" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q23" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q23" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q23" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q23" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>21. Quelqu’un a menacé de me blesser ou de raconter des mensonges à mon sujet, si je ne faisais pas quelque chose de nature sexuelle avec lui.</p>
+          <div class="options">
+          <label><input type="radio" name="q21" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q21" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q21" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q21" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q21" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>24. J’ai été victime d’abus sexuels.</p>
-        <div class="options">
-        <label><input type="radio" name="q24" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q24" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q24" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q24" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q24" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>22. J’avais la meilleure famille du monde.</p>
+          <div class="options">
+          <label><input type="radio" name="q22" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q22" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q22" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q22" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q22" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>25. Je pense que j’ai été maltraité affectivement.</p>
-        <div class="options">
-        <label><input type="radio" name="q25" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q25" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q25" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q25" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q25" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>23. Quelqu’un a essayé de me faire faire des actes sexuels ou de me faire regarder de tels actes.</p>
+          <div class="options">
+          <label><input type="radio" name="q23" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q23" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q23" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q23" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q23" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>26. Il y avait quelqu’un pour m’emmener chez le docteur si j’en avais besoin.</p>
-        <div class="options">
-        <label><input type="radio" name="q26" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q26" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q26" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q26" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q26" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>24. J’ai été victime d’abus sexuels.</p>
+          <div class="options">
+          <label><input type="radio" name="q24" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q24" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q24" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q24" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q24" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>27. Je pense qu’on a abusé de moi sexuellement.</p>
-        <div class="options">
-        <label><input type="radio" name="q27" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q27" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q27" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q27" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q27" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>25. Je pense que j’ai été maltraité affectivement.</p>
+          <div class="options">
+          <label><input type="radio" name="q25" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q25" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q25" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q25" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q25" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <div class="question-block">
-        <p>28. Ma famille était source de force et de soutien.</p>
-        <div class="options">
-        <label><input type="radio" name="q28" value="jamais"> Jamais</label>
-        <label><input type="radio" name="q28" value="rarement"> Rarement</label>
-        <label><input type="radio" name="q28" value="quelquefois"> Quelquefois</label>
-        <label><input type="radio" name="q28" value="souvent"> Souvent</label>
-        <label><input type="radio" name="q28" value="très-souvent"> Très souvent</label>
+        <div class="question-block">
+          <p>26. Il y avait quelqu’un pour m’emmener chez le docteur si j’en avais besoin.</p>
+          <div class="options">
+          <label><input type="radio" name="q26" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q26" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q26" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q26" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q26" value="très-souvent"> Très souvent</label>
+          </div>
         </div>
-      </div>
-      <button type="submit" class="main-btn">Suivant</button>
-    </form>
-  </main>
+        <div class="question-block">
+          <p>27. Je pense qu’on a abusé de moi sexuellement.</p>
+          <div class="options">
+          <label><input type="radio" name="q27" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q27" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q27" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q27" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q27" value="très-souvent"> Très souvent</label>
+          </div>
+        </div>
+        <div class="question-block">
+          <p>28. Ma famille était source de force et de soutien.</p>
+          <div class="options">
+          <label><input type="radio" name="q28" value="jamais"> Jamais</label>
+          <label><input type="radio" name="q28" value="rarement"> Rarement</label>
+          <label><input type="radio" name="q28" value="quelquefois"> Quelquefois</label>
+          <label><input type="radio" name="q28" value="souvent"> Souvent</label>
+          <label><input type="radio" name="q28" value="très-souvent"> Très souvent</label>
+          </div>
+        </div>
+        <button type="submit" class="main-btn">Suivant</button>
+      </form>
+    </main>
+  </div>
 </body>
 </html>
