@@ -6,279 +6,43 @@
   <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
 </head>
 <body>
-	<header class="page-header">
-		<img src="/ctsa-tdah-questionnaire/assets/images/logo.png" alt="logo">
-    <nav>
-      <a href="/ctsa-tdah-questionnaire/pages/page-ASRS.html" class="page-btn">Échelle ASRS</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-Wender.html" class="page-btn">Test Wender</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-RCTQ.html" class="page-btn">RCTQ-13</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-UPPS.html" class="page-btn">UPPS-20</a>
-      <a href="/ctsa-tdah-questionnaire/pages/page-CTQ.html" class="page-btn">CTQ</a>
-      <a href="/ctsa-tdah-questionnaire/pages/accueil.html" class="page-btn">Accueil</a>
-      <a href="" class="page-btn">Contact</a>
-    </nav>
-	</header>
-  <main class="test-main">
-    <div class="titre-de-page">
-      <h1>Échelle d’évaluation de Wender-Utah</h1>
-    </div>
-    <div class="instructions">
-      <h3>Instructions</h3>
-      <p>Voici une liste d’items concernant des comportements ou des problèmes que peuvent avoir présentés les gens avec un TDAH dans leur enfance. Lisez ces items et indiquez votre réponse en fonction du barème (Pas du tout – Légèrement – ... – Énormément).</p>
-    </div>
-    <form class="test-form">
-      <div class="question-block">
-        <p>1. J’avais du mal à me concentrer et j’étais facilement distrait.</p>
-        <div class="options">
-        <label><input type="radio" name="q1" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q1" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q1" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q1" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q1" value="énormément"> Énormément</label>
+  <div id="app">
+    <header class="page-header">
+      <img src="/ctsa-tdah-questionnaire/assets/images/logo.png" alt="logo">
+      <nav>
+        <a href="/ctsa-tdah-questionnaire/pages/page-ASRS.html" class="page-btn">Échelle ASRS</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-Wender.html" class="page-btn">Test Wender</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-RCTQ.html" class="page-btn">RCTQ-13</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-UPPS.html" class="page-btn">UPPS-20</a>
+        <a href="/ctsa-tdah-questionnaire/pages/page-CTQ.html" class="page-btn">CTQ</a>
+        <a href="/ctsa-tdah-questionnaire/pages/accueil.html" class="page-btn">Accueil</a>
+        <a href="" class="page-btn">Contact</a>
+      </nav>
+    </header>
+    <main class="test-main">
+      <div class="titre-de-page">
+        <h1>Échelle d’évaluation de Wender-Utah</h1>
+      </div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <p>Voici une liste d’items concernant des comportements ou des problèmes que peuvent avoir présentés les gens avec un TDAH dans leur enfance. Lisez ces items et indiquez votre réponse en fonction du barème (Pas du tout – Légèrement – ... – Énormément).</p>
+      </div>
+      <div class="test-form">
+        <div class="question-block">
+          <p>{{ questionsWender[questionActuelleIndex].text }}</p>
+          <div class="options">
+            <label v-for="(option, idx) in options" :key="idx">
+              <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
+            </label>
+          </div>
+        </div>
+        <div class="boutons">
+          <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>
+          <button class="main-btn" v-if="questionActuelleIndex === questions.length - 1" @click="terminer" :disabled="!toutEstFini">Terminer le test</button>
+          <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivent">Suivent</button>
         </div>
       </div>
-      <div class="question-block">
-        <p>2. J’étais souvent anxieux ou préoccupé.</p>
-        <div class="options">
-        <label><input type="radio" name="q2" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q2" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q2" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q2" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q2" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>3. J’étais nerveux ou agité.</p>
-        <div class="options">
-        <label><input type="radio" name="q3" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q3" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q3" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q3" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q3" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>4. J’étais inattentif, dans la lune.</p>
-        <div class="options">
-        <label><input type="radio" name="q4" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q4" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q4" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q4" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q4" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>5. J’étais impatient.</p>
-        <div class="options">
-        <label><input type="radio" name="q5" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q5" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q5" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q5" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q5" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>6. J’avais un tempérament explosif, j’étais colérique.</p>
-        <div class="options">
-        <label><input type="radio" name="q6" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q6" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q6" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q6" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q6" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>7. J’avais des difficultés à terminer les tâches que je commençais.</p>
-        <div class="options">
-        <label><input type="radio" name="q7" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q7" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q7" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q7" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q7" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>8. J’étais obstiné, très déterminé.</p>
-        <div class="options">
-        <label><input type="radio" name="q8" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q8" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q8" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q8" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q8" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>9. J’étais souvent triste, mélancolique ou déprimé.</p>
-        <div class="options">
-        <label><input type="radio" name="q9" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q9" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q9" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q9" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q9" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>10. J’étais désobéissant, rebelle ou insolent envers mes parents.</p>
-        <div class="options">
-        <label><input type="radio" name="q10" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q10" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q10" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q10" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q10" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>11. J’avais une faible estime de moi-même.</p>
-        <div class="options">
-        <label><input type="radio" name="q11" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q11" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q11" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q11" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q11" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>12. J’étais facilement irritable.</p>
-        <div class="options">
-        <label><input type="radio" name="q12" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q12" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q12" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q12" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q12" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>13. J’avais des sautes d’humeur fréquentes.</p>
-        <div class="options">
-        <label><input type="radio" name="q13" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q13" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q13" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q13" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q13" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>14. J’avais souvent des accès de rage.</p>
-        <div class="options">
-        <label><input type="radio" name="q14" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q14" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q14" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q14" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q14" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>15. J’agissais de façon impulsive, sans réfléchir.</p>
-        <div class="options">
-        <label><input type="radio" name="q15" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q15" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q15" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q15" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q15" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>16. J’étais immature pour mon âge.</p>
-        <div class="options">
-        <label><input type="radio" name="q16" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q16" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q16" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q16" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q16" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>17. Je ressentais souvent de la culpabilité ou des regrets.</p>
-        <div class="options">
-        <label><input type="radio" name="q17" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q17" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q17" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q17" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q17" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>18. Je perdais facilement le contrôle de moi-même.</p>
-        <div class="options">
-        <label><input type="radio" name="q18" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q18" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q18" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q18" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q18" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>19. Je pensais ou agissais de manière irrationnelle.</p>
-        <div class="options">
-        <label><input type="radio" name="q19" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q19" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q19" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q19" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q19" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>20. J’étais impopulaire et j’avais du mal à me faire ou garder des amis.</p>
-        <div class="options">
-        <label><input type="radio" name="q20" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q20" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q20" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q20" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q20" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>21. J’avais des difficultés à comprendre le point de vue des autres.</p>
-        <div class="options">
-        <label><input type="radio" name="q21" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q21" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q21" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q21" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q21" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>22. J’avais des problèmes avec l’autorité ou à l’école (conflits, visites chez le directeur).</p>
-        <div class="options">
-        <label><input type="radio" name="q22" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q22" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q22" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q22" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q22" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>23. J’étais un élève faible, lent à apprendre.</p>
-        <div class="options">
-        <label><input type="radio" name="q23" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q23" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q23" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q23" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q23" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>24. J’avais des difficultés en mathématiques ou avec les chiffres.</p>
-        <div class="options">
-        <label><input type="radio" name="q24" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q24" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q24" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q24" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q24" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <div class="question-block">
-        <p>25. Je n’exploitais pas pleinement mon potentiel à l’école.</p>
-        <div class="options">
-        <label><input type="radio" name="q25" value="pas-du-tout"> Pas du tout</label>
-        <label><input type="radio" name="q25" value="légèrement"> Légèrement</label>
-        <label><input type="radio" name="q25" value="modérément"> Modérément</label>
-        <label><input type="radio" name="q25" value="beaucoup"> Beaucoup</label>
-        <label><input type="radio" name="q25" value="énormément"> Énormément</label>
-        </div>
-      </div>
-      <button type="submit" class="main-btn">Suivant</button>
-    </form>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
