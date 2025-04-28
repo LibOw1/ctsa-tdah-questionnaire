@@ -33,8 +33,18 @@ const app = Vue.createApp({
 				{text: "Ma famille était source de force et de soutien."},
       ],
       options: ['Jamais', 'Rarement', 'Quelquefois', 'Souvent', 'Très souvent'],
+			réponses: []
     };
   },
+
+
+	//***** COMPUTED *****//
+	computed: {
+		toutEstFini() {
+			return this.réponses.every(réponse => réponse !== '')
+		}
+	},
+
 
 	//***** BOUTONS *****//
   methods: {
@@ -43,6 +53,9 @@ const app = Vue.createApp({
     },
     suivent() {
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
+    },
+    terminer() {
+      if (this.toutEstFini) {alert("C'est finir!");}
     }
   }
 });

@@ -39,9 +39,9 @@
           </div>
         </div>
         <div class="boutons">
-          <button class="main-btn" @click="retour">Retour</button>
-          <button class="main-btn">Terminer le test</button>
-          <button class="main-btn" @click="souvent">Suivent</button>
+          <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>
+          <button class="main-btn" v-if="" @click="terminer" v-if="questionActuelleIndex === questions.length - 1" @click="terminer" :disabled="!toutEstFini">Terminer le test</button>
+          <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivent">Suivent</button>
         </div>
       </div>
     </main>
