@@ -363,3 +363,9 @@ img {
 .question-tableau p {
 	font-size: 22px;
 }
+
+.boutons {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
