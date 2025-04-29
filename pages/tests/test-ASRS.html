@@ -35,7 +35,7 @@
           <p>{{ questions[questionActuelleIndex].text }}</p>
           <div class="options">
             <label v-for="(option, idx) in options" :key="idx">
-              <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
+              <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ optionsASRS }}
             </label>
           </div>
         </div>

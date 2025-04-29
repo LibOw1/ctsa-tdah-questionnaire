@@ -139,7 +139,11 @@ const app = Vue.createApp({
 
 
 			//** OPTIONS **/
-      options: ['Jamais', 'Rarement', 'Quelquefois', 'Souvent', 'Très souvent'],
+      optionsASRS: ['Jamais', 'Rarement', 'Parfois', 'Souvent', 'Très souvent'],
+      optionsWender: ['Pas du tout', 'Légèrement', 'Modérément', 'Beaucoup', 'Énormément'],
+      optionsRCTQ: ['0', '1', '2', '3', '4'],
+      optionsUPPS: ['1', '2', '3', '4'],
+      optionsCTQ: ['Jamais', 'Rarement', 'Quelquefois', 'Souvent', 'Très souvent'],
 			réponses: []
     };
   },
