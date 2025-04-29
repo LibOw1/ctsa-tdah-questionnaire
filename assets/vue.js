@@ -144,7 +144,8 @@ const app = Vue.createApp({
       optionsRCTQ: ['0', '1', '2', '3', '4'],
       optionsUPPS: ['1', '2', '3', '4'],
       optionsCTQ: ['Jamais', 'Rarement', 'Quelquefois', 'Souvent', 'Très souvent'],
-			réponses: []
+			options: [],
+			réponses: [],
     };
   },
 
@@ -158,11 +159,11 @@ const app = Vue.createApp({
 
 	created() {
 		const path = window.location.pathname;
-		if (path.includes('test-ASRS.html')) {this.questions = this.questionsASRS;}
-		else if (path.includes('test-Wender.html')) {this.questions = this.questionsWender;}
-		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ;}
-		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS;}
-		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ;}
+		if (path.includes('test-ASRS.html')) {this.questions = this.questionsASRS; this.options = this.optionsASRS;}
+		else if (path.includes('test-Wender.html')) {this.questions = this.questionsWender; this.options = this.optionsWender;}
+		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ; this.options = this.optionsRCTQ;}
+		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS; this.options = this.optionsUPPS;}
+		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ; this.options = this.optionsCTQ;}
 		this.réponses = Array(this.questions.length).fill('');
 	},
 

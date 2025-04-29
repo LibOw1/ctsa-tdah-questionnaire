@@ -36,50 +36,49 @@
           <p>{{ questions[questionActuelleIndex].text }}</p>
           <div class="options">
             <label v-for="(option, idx) in options" :key="idx">
-              <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ optionsRCTQ }}
+              <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
             </label>
           </div>
-          <div class="question-tableau">
-            <p>Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée:</p>
-            <div class="question-block">
-              <p>Martin</p>
-              <div class="options">
-              <label><input type="radio" name="q14-1" value="pas-du-tout"> Pas du tout</label>
-              <label><input type="radio" name="q14-1" value="très-peu"> Très peu</label>
-              <label><input type="radio" name="q14-1" value="un-peu"> Un peu</label>
-              <label><input type="radio" name="q14-1" value="beaucoup"> Beaucoup</label>
-              <label><input type="radio" name="q14-1" value="extrêmement"> Extrêmement</label>
-              </div>
+        </div><div class="question-tableau">
+          <p>Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée:</p>
+          <div class="question-block">
+            <p>Martin</p>
+            <div class="options">
+            <label><input type="radio" name="q14-1" value="pas-du-tout"> Pas du tout</label>
+            <label><input type="radio" name="q14-1" value="très-peu"> Très peu</label>
+            <label><input type="radio" name="q14-1" value="un-peu"> Un peu</label>
+            <label><input type="radio" name="q14-1" value="beaucoup"> Beaucoup</label>
+            <label><input type="radio" name="q14-1" value="extrêmement"> Extrêmement</label>
             </div>
-            <div class="question-block">
-              <p>Après-midi</p>
-              <div class="options">
-              <label><input type="radio" name="q14-2" value="pas-du-tout"> Pas du tout</label>
-              <label><input type="radio" name="q14-2" value="très-peu"> Très peu</label>
-              <label><input type="radio" name="q14-2" value="un-peu"> Un peu</label>
-              <label><input type="radio" name="q14-2" value="beaucoup"> Beaucoup</label>
-              <label><input type="radio" name="q14-2" value="extrêmement"> Extrêmement</label>
-              </div>
+          </div>
+          <div class="question-block">
+            <p>Après-midi</p>
+            <div class="options">
+            <label><input type="radio" name="q14-2" value="pas-du-tout"> Pas du tout</label>
+            <label><input type="radio" name="q14-2" value="très-peu"> Très peu</label>
+            <label><input type="radio" name="q14-2" value="un-peu"> Un peu</label>
+            <label><input type="radio" name="q14-2" value="beaucoup"> Beaucoup</label>
+            <label><input type="radio" name="q14-2" value="extrêmement"> Extrêmement</label>
             </div>
-            <div class="question-block">
-              <p>Soir</p>
-              <div class="options">
-              <label><input type="radio" name="q14-3" value="pas-du-tout"> Pas du tout</label>
-              <label><input type="radio" name="q14-3" value="très-peu"> Très peu</label>
-              <label><input type="radio" name="q14-3" value="un-peu"> Un peu</label>
-              <label><input type="radio" name="q14-3" value="beaucoup"> Beaucoup</label>
-              <label><input type="radio" name="q14-3" value="extrêmement"> Extrêmement</label>
-              </div>
+          </div>
+          <div class="question-block">
+            <p>Soir</p>
+            <div class="options">
+            <label><input type="radio" name="q14-3" value="pas-du-tout"> Pas du tout</label>
+            <label><input type="radio" name="q14-3" value="très-peu"> Très peu</label>
+            <label><input type="radio" name="q14-3" value="un-peu"> Un peu</label>
+            <label><input type="radio" name="q14-3" value="beaucoup"> Beaucoup</label>
+            <label><input type="radio" name="q14-3" value="extrêmement"> Extrêmement</label>
             </div>
-            <div class="question-block">
-              <p>Coucher</p>
-              <div class="options">
-              <label><input type="radio" name="q14-4" value="pas-du-tout"> Pas du tout</label>
-              <label><input type="radio" name="q14-4" value="très-peu"> Très peu</label>
-              <label><input type="radio" name="q14-4" value="un-peu"> Un peu</label>
-              <label><input type="radio" name="q14-4" value="beaucoup"> Beaucoup</label>
-              <label><input type="radio" name="q14-4" value="extrêmement"> Extrêmement</label>
-              </div>
+          </div>
+          <div class="question-block">
+            <p>Coucher</p>
+            <div class="options">
+            <label><input type="radio" name="q14-4" value="pas-du-tout"> Pas du tout</label>
+            <label><input type="radio" name="q14-4" value="très-peu"> Très peu</label>
+            <label><input type="radio" name="q14-4" value="un-peu"> Un peu</label>
+            <label><input type="radio" name="q14-4" value="beaucoup"> Beaucoup</label>
+            <label><input type="radio" name="q14-4" value="extrêmement"> Extrêmement</label>
             </div>
           </div>
         </div>
