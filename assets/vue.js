@@ -134,6 +134,7 @@ const app = Vue.createApp({
 				{text: "Je pense qu’on a abusé de moi sexuellement."},
 				{text: "Ma famille était source de force et de soutien."},
       ],
+      questions: [],
 
 
 
@@ -153,11 +154,11 @@ const app = Vue.createApp({
 
 	created() {
 		const path = window.location.pathname;
-		if (path.includes('page-ASRS')) {this.questions = this.questionsASRS;}
-		else if (path.includes('page-Wender')) {this.questions = this.questionsWender;}
-		else if (path.includes('page-RCTQ')) {this.questions = this.questionsRCTQ;}
-		else if (path.includes('page-UPPS')) {this.questions = this.questionsUPPS;}
-		else if (path.includes('page-CTQ')) {this.questions = this.questionsCTQ;}
+		if (path.includes('test-ASRS.html')) {this.questions = this.questionsASRS;}
+		else if (path.includes('test-Wender.html')) {this.questions = this.questionsWender;}
+		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ;}
+		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS;}
+		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ;}
 		this.réponses = Array(this.questions.length).fill('');
 	},
 

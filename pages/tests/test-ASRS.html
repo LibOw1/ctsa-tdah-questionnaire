@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Questionnaire sur les Symptômes Actuels (ASRS)</title>
   <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/ctsa-tdah-questionnaire/assets/vue.js" defer></script>
 </head>
 <body>
   <div id="app">
@@ -30,7 +32,7 @@
       </div>
       <div class="test-form">
         <div class="question-block">
-          <p>{{ questionsASRS[questionActuelleIndex].text }}</p>
+          <p>{{ questions[questionActuelleIndex].text }}</p>
           <div class="options">
             <label v-for="(option, idx) in options" :key="idx">
               <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
