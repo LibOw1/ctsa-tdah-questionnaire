@@ -27,9 +27,9 @@
       </div>
       <div class="instructions">
         <h3>Instructions</h3>
-        <p>Ce test évalue la vitesse et la quantité de vos pensées au cours des dernières 24 heures. Répondez à chaque question en choisissant une note de 0 à 4 selon ce que vous avez ressenti: <span>0 = pas du tout</span> <span>2 = un peu</span> <span>4 = tout à fait</span>.</p>
-        <p>Ensuite, indiquez à quel moment de la journée (matin, après-midi, soir, coucher) vous avez ressenti ce type de pensées, et à quel point (de <span>pas du tout</span> à <span>extrêmement</span>).</p>
-        <p><span>Essayez d’être honnête:</span> il n’y a pas de bonne ou de mauvaise réponse.</p>
+        <p>Ce test évalue la vitesse et la quantité de vos pensées au cours des dernières 24 heures. Répondez à chaque question en choisissant une note de 0 à 4 selon ce que vous avez ressenti: <b>0 = pas du tout</b> <b>2 = un peu</b> <b>4 = tout à fait</b>.</p>
+        <p>Ensuite, indiquez à quel moment de la journée (matin, après-midi, soir, coucher) vous avez ressenti ce type de pensées, et choisissez une note entre 0 et 4 pour évaluer leur intensité: <b>0 = pas du tout</b> <b>2 = un peu</b> <b>4 = extrêmement</b>.</p>
+        <p><b>Essayez d’être honnête:</b> il n’y a pas de bonne ou de mauvaise réponse.</p>
       </div>
       <div class="test-form">
         <div class="question-block">
@@ -39,48 +39,9 @@
               <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
             </label>
           </div>
-        </div><div class="question-tableau">
-          <p>Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée:</p>
-          <div class="question-block">
-            <p>Martin</p>
-            <div class="options">
-            <label><input type="radio" name="q14-1" value="pas-du-tout"> Pas du tout</label>
-            <label><input type="radio" name="q14-1" value="très-peu"> Très peu</label>
-            <label><input type="radio" name="q14-1" value="un-peu"> Un peu</label>
-            <label><input type="radio" name="q14-1" value="beaucoup"> Beaucoup</label>
-            <label><input type="radio" name="q14-1" value="extrêmement"> Extrêmement</label>
-            </div>
-          </div>
-          <div class="question-block">
-            <p>Après-midi</p>
-            <div class="options">
-            <label><input type="radio" name="q14-2" value="pas-du-tout"> Pas du tout</label>
-            <label><input type="radio" name="q14-2" value="très-peu"> Très peu</label>
-            <label><input type="radio" name="q14-2" value="un-peu"> Un peu</label>
-            <label><input type="radio" name="q14-2" value="beaucoup"> Beaucoup</label>
-            <label><input type="radio" name="q14-2" value="extrêmement"> Extrêmement</label>
-            </div>
-          </div>
-          <div class="question-block">
-            <p>Soir</p>
-            <div class="options">
-            <label><input type="radio" name="q14-3" value="pas-du-tout"> Pas du tout</label>
-            <label><input type="radio" name="q14-3" value="très-peu"> Très peu</label>
-            <label><input type="radio" name="q14-3" value="un-peu"> Un peu</label>
-            <label><input type="radio" name="q14-3" value="beaucoup"> Beaucoup</label>
-            <label><input type="radio" name="q14-3" value="extrêmement"> Extrêmement</label>
-            </div>
-          </div>
-          <div class="question-block">
-            <p>Coucher</p>
-            <div class="options">
-            <label><input type="radio" name="q14-4" value="pas-du-tout"> Pas du tout</label>
-            <label><input type="radio" name="q14-4" value="très-peu"> Très peu</label>
-            <label><input type="radio" name="q14-4" value="un-peu"> Un peu</label>
-            <label><input type="radio" name="q14-4" value="beaucoup"> Beaucoup</label>
-            <label><input type="radio" name="q14-4" value="extrêmement"> Extrêmement</label>
-            </div>
-          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
         </div>
         <div class="boutons">
           <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>

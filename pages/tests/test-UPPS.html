@@ -27,9 +27,9 @@
       </div>
       <div class="instructions">
         <h3>Instructions</h3>
-        <p>Lisez chaque affirmation et indiquez dans quelle mesure vous êtes d'accord ou non. Choisissez une réponse entre <span>1</span> et <span>4</span> en fonction de votre comportement habituel.</p>
-        <p><span>1 − Tout à fait d’accord</span> | <span>2 − Plutôt
-          d'accord</span> | <span>3 − Plutôt en désaccord</span> | <span>4 − Tout à fait en désaccord</span></p>
+        <p>Lisez chaque affirmation et indiquez dans quelle mesure vous êtes d'accord ou non. Choisissez une réponse entre <b>1</b> et <b>4</b> en fonction de votre comportement habituel.</p>
+        <p><b>1 − Tout à fait d’accord</b> | <b>2 − Plutôt
+          d'accord</b> | <b>3 − Plutôt en désaccord</b> | <b>4 − Tout à fait en désaccord</b></p>
       </div>
       <div class="test-form">
         <div class="question-block">
@@ -39,6 +39,9 @@
               <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
             </label>
           </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
         </div>
         <div class="boutons">
           <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>

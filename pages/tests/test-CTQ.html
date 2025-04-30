@@ -27,7 +27,7 @@
       </div>
       <div class="instructions">
         <h3>Instructions</h3>
-        <p>Lisez chaque affirmation en pensant à votre enfance et/ou adolescence. Pour chaque phrase, cochez la case qui correspond le mieux à la fréquence avec laquelle vous avez vécu cette situation: <span>Jamais</span> – <span>Rarement</span> – <span>Quelquefois</span> – <span>Souvent</span> – <span>Très souvent</span></p>
+        <p>Lisez chaque affirmation en pensant à votre enfance et/ou adolescence. Pour chaque phrase, cochez la case qui correspond le mieux à la fréquence avec laquelle vous avez vécu cette situation: <b>Jamais</b> – <b>Rarement</b> – <b>Quelquefois</b> – <b>Souvent</b> – <b>Très souvent</b></p>
       </div>
       <div class="test-form">
         <div class="question-block">
@@ -37,6 +37,9 @@
               <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
             </label>
           </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
         </div>
         <div class="boutons">
           <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>

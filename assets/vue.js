@@ -73,6 +73,10 @@ const app = Vue.createApp({
 				{text: "Une pensée en induit instantanément une autre puis une autre, puis une autre..."},
 				{text: "Mes pensées m’amènent sans arrêt très loin de mon point de départ."},
 				{text: "Quand mes pensées s’emballent, je me déconnecte de ce qui se passe autour de moi."},
+				{text: "Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée: Matin"},
+				{text: "Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée: Après-midi"},
+				{text: "Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée: Soir"},
+				{text: "Merci de mettre une croix, dans le tableau suivant, pour préciser la fréquence à laquelle vous aviez ce type de pensées (en trop grand nombre et/ou à trop grande vitesse) en fonction des moments de la journée: Coucher"},
       ],
 
 
@@ -154,6 +158,11 @@ const app = Vue.createApp({
 	computed: {
 		toutEstFini() {
 			return this.réponses.every(réponse => réponse !== '')
+		},
+		progress() {
+			const totalQuestions = this.questions.length;
+			const questionsRépondues = this.réponses.filter(réponse => réponse !== '').length;
+			return totalQuestions > 0 ? (questionsRépondues / totalQuestions) * 100 : 0;
 		}
 	},
 
