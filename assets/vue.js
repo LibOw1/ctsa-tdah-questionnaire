@@ -144,12 +144,18 @@ const app = Vue.createApp({
 
 			//** OPTIONS **/
       optionsASRS: ['Jamais', 'Rarement', 'Parfois', 'Souvent', 'Très souvent'],
+			pointsASRS: [0, 1, 2, 3, 4],
       optionsWender: ['Pas du tout', 'Légèrement', 'Modérément', 'Beaucoup', 'Énormément'],
+			pointsWender: [0, 1, 2, 3, 4],
       optionsRCTQ: ['0', '1', '2', '3', '4'],
+			pointsRCTQ: [0, 1, 2, 3, 4],
       optionsUPPS: ['1', '2', '3', '4'],
+			pointsUPPS: [1, 2, 3, 4],
       optionsCTQ: ['Jamais', 'Rarement', 'Quelquefois', 'Souvent', 'Très souvent'],
+			pointsCTQ: [0, 1, 2, 3, 4],
 			options: [],
 			réponses: [],
+			points: [],
     };
   },
 
@@ -168,11 +174,11 @@ const app = Vue.createApp({
 
 	created() {
 		const path = window.location.pathname;
-		if (path.includes('test-ASRS.html')) {this.questions = this.questionsASRS; this.options = this.optionsASRS;}
-		else if (path.includes('test-Wender.html')) {this.questions = this.questionsWender; this.options = this.optionsWender;}
-		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ; this.options = this.optionsRCTQ;}
-		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS; this.options = this.optionsUPPS;}
-		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ; this.options = this.optionsCTQ;}
+		if (path.includes('test-ASRS.html')) {this.questions = this.questionsASRS; this.options = this.optionsASRS; this.points = this.pointsASRS;}
+		else if (path.includes('test-Wender.html')) {this.questions = this.questionsWender; this.options = this.optionsWender; this.points = this.pointsWender;}
+		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ; this.options = this.optionsRCTQ; this.points = this.pointsRCTQ;}
+		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS; this.options = this.optionsUPPS; this.points = this.pointsUPPS;}
+		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ; this.options = this.optionsCTQ; this.points = this.pointsCTQ;}
 		this.réponses = Array(this.questions.length).fill('');
 	},
 
@@ -186,9 +192,19 @@ const app = Vue.createApp({
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
     },
     terminer() {
-      if (this.toutEstFini) {alert("C'est finir!");}
-    }
-  }
+      if (this.toutEstFini) {const score = this.calculerRésultat();
+				localStorage.setItem('dernierScore', score);
+				localStorage.setItem('dernierTest', window.location.pathname);
+				window.location.href = '/ctsa-tdah-questionnaire/pages/resultats.html';}
+		},
+		calculerRésultat() {
+			let score = 0; for (let réponseIndex = 0; réponseIndex < this.réponses.length; réponseIndex++)
+			{const optionsIndex = this.options.indexOf(this.réponses[réponseIndex]);
+				score += this.points[optionsIndex];
+			}
+			return score;
+		}
+	}
 });
 
 app.mount('#app');
