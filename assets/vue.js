@@ -189,13 +189,15 @@ const app = Vue.createApp({
       if (this.questionActuelleIndex > 0) {this.questionActuelleIndex--;}
     },
     suivent() {
+			console.log('testSuivent:');
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
     },
     terminer() {
+			console.log('terminerRéponses:', this.calculerRésultat);
       if (this.toutEstFini) {const score = this.calculerRésultat();
 				localStorage.setItem('dernierScore', score);
 				localStorage.setItem('dernierTest', window.location.pathname);
-				window.location.href = '/ctsa-tdah-questionnaire/pages/tests/test-resultats.html';}
+				window.location.href = '../../pages/tests/test-resultats.html';}
 		},
 		calculerRésultat() {
 			let score = 0;
