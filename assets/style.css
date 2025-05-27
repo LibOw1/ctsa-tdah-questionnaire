@@ -365,3 +365,12 @@ img {
 	border-radius: 10px;
 	transition: width 0.5s ease-in-out;
 }
+
+.resultat {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
+}

@@ -195,11 +195,12 @@ const app = Vue.createApp({
       if (this.toutEstFini) {const score = this.calculerRésultat();
 				localStorage.setItem('dernierScore', score);
 				localStorage.setItem('dernierTest', window.location.pathname);
-				window.location.href = '/ctsa-tdah-questionnaire/pages/resultats.html';}
+				window.location.href = '/ctsa-tdah-questionnaire/pages/tests/test-resultats.html';}
 		},
 		calculerRésultat() {
-			let score = 0; for (let réponseIndex = 0; réponseIndex < this.réponses.length; réponseIndex++)
-			{const optionsIndex = this.options.indexOf(this.réponses[réponseIndex]);
+			let score = 0;
+			for (let réponseIndex = 0; réponseIndex < this.réponses.length; réponseIndex++) {
+				const optionsIndex = this.options.indexOf(this.réponses[réponseIndex]);
 				score += this.points[optionsIndex];
 			}
 			return score;

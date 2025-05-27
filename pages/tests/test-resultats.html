@@ -5,7 +5,7 @@
   <title>Résultats du test</title>
   <link rel="stylesheet" href="/ctsa-tdah-questionnaire/assets/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="/ctsa-tdah-questionnaire/assets/vue.js" defer></script>
+  <script src="/ctsa-tdah-questionnaire/assets/resultats.js" defer></script>
 </head>
 <body>
   <div id="app">
@@ -21,14 +21,14 @@
         <a href="" class="page-btn">Contact</a>
       </nav>
     </header>
-    <main class="test-main">
+    <main>
       <div class="titre-de-page">
         <h1>Résultat de votre test</h1>
       </div>
-      <div>
-        <h3>Votre résultat:</h3>
-        <p>Résultats</p>
-        <p>ASRS</p>
+      <div class="resultat">
+        <h2>{{ titreResultat }}</h2>
+        <p>{{ textResultat }}</p>
+        <p>{{ titreTest }}</p>
       </div>
       <div class="retour-accueil">
         <a href="/ctsa-tdah-questionnaire/pages/accueil.html" class="main-btn">Retour à l'accueil</a>
