@@ -142,6 +142,11 @@ const app = Vue.createApp({
 
 
 
+			//** COMMENTAIRES **/
+			commentaires: [],
+
+
+
 			//** OPTIONS **/
       optionsASRS: ['Jamais', 'Rarement', 'Parfois', 'Souvent', 'Très souvent'],
 			pointsASRS: [0, 1, 2, 3, 4],
@@ -157,6 +162,10 @@ const app = Vue.createApp({
 			réponses: [],
 			points: [],
       score: 0,
+
+
+
+			//** RESULTATS **/
       test: '',
       titreTest: '',
       titreResultat: '',
@@ -188,6 +197,7 @@ const app = Vue.createApp({
     const dernierScore = parseInt(localStorage.getItem('dernierScore'));
     const dernierTest = localStorage.getItem('dernierTest');
     this.analyserRésultat();
+		this.commentaires = Array(this.questions.length).fill('');
 	},
 
 

@@ -321,8 +321,7 @@ img {
 
 .question-block {
 	width: 100%;
-  margin-bottom: 50px;
-	border-bottom: 2px solid #5f5c7e80;
+  margin-bottom: 30px;
 }
 
 .question-block p {
@@ -344,6 +343,26 @@ img {
   font-size: 19px;
 }
 
+.commentaire {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 20px;
+	border-top: 2px solid #5f5c7e80;
+}
+
+.commentaire textarea {
+  width: 70%;
+  height: 80px;
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px;
+  border: solid 1px #2a2a2a;
+  background-color: #f4f4fa;
+  border-radius: 5px;
+}
+
 .boutons {
 	width: 100%;
 	display: flex;
@@ -355,7 +374,6 @@ img {
 	height: 10px;
 	background-color: #8887d9;
 	border-radius: 10px;
-	margin-top: 20px;
 }
 
 .progress-bar {
