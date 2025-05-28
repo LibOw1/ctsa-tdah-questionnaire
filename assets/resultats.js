@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+const resultatsApp = Vue.createApp({
   data() {
     return {
       score: 0,
@@ -36,4 +36,4 @@ const app = Vue.createApp({
   }
 });
 
-app.mount('#app');
+resultatsApp.mount('#resultats');

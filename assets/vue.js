@@ -156,6 +156,11 @@ const app = Vue.createApp({
 			options: [],
 			réponses: [],
 			points: [],
+      score: 0,
+      test: '',
+      titreTest: '',
+      titreResultat: '',
+      textResultat: '',
     };
   },
 
@@ -180,6 +185,9 @@ const app = Vue.createApp({
 		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS; this.options = this.optionsUPPS; this.points = this.pointsUPPS;}
 		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ; this.options = this.optionsCTQ; this.points = this.pointsCTQ;}
 		this.réponses = Array(this.questions.length).fill('');
+    const dernierScore = parseInt(localStorage.getItem('dernierScore'));
+    const dernierTest = localStorage.getItem('dernierTest');
+    this.analyserRésultat();
 	},
 
 
@@ -189,6 +197,10 @@ const app = Vue.createApp({
       if (this.questionActuelleIndex > 0) {this.questionActuelleIndex--;}
     },
     suivent() {
+			if (this.réponses[this.questionActuelleIndex] === '') {
+				alert('Veuillez répondre à la question actuelle avant de continuer.');
+				return;
+			}
 			console.log('testSuivent:');
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
     },
@@ -206,7 +218,24 @@ const app = Vue.createApp({
 				score += this.points[optionsIndex];
 			}
 			return score;
-		}
+		},
+    analyserRésultat() {
+      if (this.test.includes('test-ASRS')) {
+        if (this.score < 24) {
+          this.titreTest = 'Test ASRS';
+          this.titreResultat = 'Risque faible de TDAH';
+          this.textResultat = 'Votre résultat indique l\'absence ou des symptômes très faibles du trouble du TDAH. Il est peu probable que vous ayez ce trouble, mais si vous avez des l\'impression que des problèmes de concentration ou d\'attention affectent votre vie, il est recommandé de consulter un professionnel.';
+        } else if (this.score < 48) {
+          this.titreTest = 'Test ASRS';
+          this.titreResultat = 'Risque modéré de TDAH';
+          this.textResultat = 'Votre résultat peut indiquer la présence de certains symptômes du TDAH. Cela ne confirme pas un diagnostic, mais suggère la nécessité d\'une consultation supplémentaire avec un médecin pour clarifier le diagnostic.';
+        } else if (this.score > 47) {
+          this.titreTest = 'Test ASRS';
+          this.titreResultat = 'Risque élevé de TDAH';
+          this.textResultat = 'Votre résultat indique une forte probabilité de TDAH. Nous vous conseillons vivement de consulter un spécialiste pour un examen approfondi et un diagnostic précis.';
+        }
+      }
+    },
 	}
 });
 
