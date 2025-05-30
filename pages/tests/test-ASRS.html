@@ -31,6 +31,9 @@
           Pour chaque question, sélectionnez l’option qui correspond le mieux à votre ressenti ou votre comportement.</p>
       </div>
       <div class="test-form">
+        <div class="progress-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+        </div>
         <div class="question-block">
           <p>{{ questions[questionActuelleIndex].text }}</p>
           <div class="options">
@@ -41,9 +44,6 @@
           <div class="commentaire">
             <textarea v-model="commentaires[questionActuelleIndex]" placeholder="Votre commentaire (si vous le souhaitez)..."></textarea>
           </div>
-        </div>
-        <div class="progress-container">
-          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
         </div>
         <div class="boutons">
           <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>

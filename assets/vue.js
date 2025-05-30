@@ -161,7 +161,6 @@ const app = Vue.createApp({
 			options: [],
 			réponses: [],
 			points: [],
-      score: 0,
 
 
 
@@ -193,11 +192,17 @@ const app = Vue.createApp({
 		else if (path.includes('test-RCTQ.html')) {this.questions = this.questionsRCTQ; this.options = this.optionsRCTQ; this.points = this.pointsRCTQ;}
 		else if (path.includes('test-UPPS.html')) {this.questions = this.questionsUPPS; this.options = this.optionsUPPS; this.points = this.pointsUPPS;}
 		else if (path.includes('test-CTQ.html')) {this.questions = this.questionsCTQ; this.options = this.optionsCTQ; this.points = this.pointsCTQ;}
-		this.réponses = Array(this.questions.length).fill('');
-    const dernierScore = parseInt(localStorage.getItem('dernierScore'));
-    const dernierTest = localStorage.getItem('dernierTest');
-    this.analyserRésultat();
-		this.commentaires = Array(this.questions.length).fill('');
+		if (this.réponses = JSON.parse(localStorage.getItem('réponses'))) {
+			} else {
+				this.réponses = Array(this.questions.length).fill('');}
+		if (this.commentaires = JSON.parse(localStorage.getItem('commentaires'))) {
+			} else {
+		this.commentaires = Array(this.questions.length).fill('');}
+		if (path.includes('test-ASRS.html')) return this.test = 'test-ASRS';
+		else if (path.includes('test-Wender.html')) return this.test = 'test-Wender';
+		else if (path.includes('test-RCTQ.html')) return this.test = 'test-RCTQ';
+		else if (path.includes('test-UPPS.html')) return this.test = 'test-UPPS';
+		else if (path.includes('test-CTQ.html')) return this.test = 'test-CTQ';
 	},
 
 
@@ -215,37 +220,18 @@ const app = Vue.createApp({
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
     },
     terminer() {
-			console.log('terminerRéponses:', this.calculerRésultat);
-      if (this.toutEstFini) {const score = this.calculerRésultat();
-				localStorage.setItem('dernierScore', score);
-				localStorage.setItem('dernierTest', window.location.pathname);
-				window.location.href = '../../pages/tests/test-resultats.html';}
-		},
-		calculerRésultat() {
-			let score = 0;
-			for (let réponseIndex = 0; réponseIndex < this.réponses.length; réponseIndex++) {
-				const optionsIndex = this.options.indexOf(this.réponses[réponseIndex]);
-				score += this.points[optionsIndex];
-			}
-			return score;
-		},
-    analyserRésultat() {
-      if (this.test.includes('test-ASRS')) {
-        if (this.score < 24) {
-          this.titreTest = 'Test ASRS';
-          this.titreResultat = 'Risque faible de TDAH';
-          this.textResultat = 'Votre résultat indique l\'absence ou des symptômes très faibles du trouble du TDAH. Il est peu probable que vous ayez ce trouble, mais si vous avez des l\'impression que des problèmes de concentration ou d\'attention affectent votre vie, il est recommandé de consulter un professionnel.';
-        } else if (this.score < 48) {
-          this.titreTest = 'Test ASRS';
-          this.titreResultat = 'Risque modéré de TDAH';
-          this.textResultat = 'Votre résultat peut indiquer la présence de certains symptômes du TDAH. Cela ne confirme pas un diagnostic, mais suggère la nécessité d\'une consultation supplémentaire avec un médecin pour clarifier le diagnostic.';
-        } else if (this.score > 47) {
-          this.titreTest = 'Test ASRS';
-          this.titreResultat = 'Risque élevé de TDAH';
-          this.textResultat = 'Votre résultat indique une forte probabilité de TDAH. Nous vous conseillons vivement de consulter un spécialiste pour un examen approfondi et un diagnostic précis.';
-        }
-      }
-    },
+  		var pointsRéponse = [];
+  		for (var réponseIndex = 0; réponseIndex < this.réponses.length; réponseIndex++) {
+  		  var index = this.options.indexOf(this.réponses[réponseIndex]);
+  		  pointsRéponse.push(this.points[index]);
+  		}
+  		localStorage.setItem('test', this.test);
+  		localStorage.setItem('questions', JSON.stringify(this.questions));
+  		localStorage.setItem('réponses', JSON.stringify(this.réponses));
+  		localStorage.setItem('commentaires', JSON.stringify(this.commentaires));
+  		localStorage.setItem('points', JSON.stringify(pointsRéponse));
+			window.location.href = 'test-resultats.html';
+  	}
 	}
 });
 

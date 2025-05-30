@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Résultats du test</title>
   <link rel="stylesheet" href="../../assets/style.css">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
   <script src="../../assets/resultats.js" defer></script>
 </head>
 <body>
-  <div id="app">
+  <div id="resultats">
     <header class="page-header">
       <img src="../../assets/images/logo.png" alt="logo">
       <nav>
@@ -24,16 +24,34 @@
     <main>
       <div class="titre-de-page">
         <h1>Résultat de votre test</h1>
+        <h1>{{ titreTest }}</h1>
       </div>
       <div class="resultat">
-        <h2>{{ titreResultat }}</h2>
+        <p><span>{{ titreResultat }}.</span></p>
         <p>{{ textResultat }}</p>
-        <p>{{ titreTest }}</p>
+      </div>
+      <div class="test-details">
+        <div class="test-liste">
+          <h2>Résultats détaillés</h2>
+          <ul>
+            <li v-for="(réponse, index) in réponses" :key="index">
+              <div class="question-resultat">Question: {{ questions[index].text }}</div>
+              <div class="reponse-resultat">Réponse: {{ réponse }} — Points: {{ points[index] }}</div>
+              <div class="commentaire-resultat">Commentaire: {{ commentaires[index] }}</div>
+            </li>
+          </ul>
+        <a href="" class="corriger-btn" @click.prevent="corrigerRéponses">Corriger mes réponses</a>
+        </div>
       </div>
       <div class="retour-accueil">
         <a href="../accueil.html" class="main-btn">Retour à l'accueil</a>
       </div>
     </main>
+		<footer class="footer">
+			<a href="../docs/mentionLegale.pdf" target="_blank">Mentions légales</a>
+			<a href="../docs/CGV.pdf" target="_blank">Conditions Générales de Vente</a>
+			<a href="../docs/RGPD.pdf" target="_blank">Politique de confidentialité (RGPD)</a>
+		</footer>
   </div>
 </body>
 </html>
