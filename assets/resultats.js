@@ -45,6 +45,20 @@ const resultatsApp = Vue.createApp({
         }
       }
     },
+    envoyerResultats() {
+      let data = {
+        titreTest: this.titreTest,
+        titreResultat: this.titreResultat,
+        textResultat: this.textResultat,
+        test: this.test,
+        questions: this.questions,
+        réponses: this.réponses,
+        commentaires: this.commentaires,
+        points: this.points,
+      };
+      let message = JSON.stringify(data, null, 2);
+      alert(message);
+    },
     corrigerRéponses() {
       if (this.test === 'test-ASRS') {
         window.location.href = 'test-ASRS.html';

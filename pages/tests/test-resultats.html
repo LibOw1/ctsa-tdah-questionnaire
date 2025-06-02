@@ -27,7 +27,7 @@
         <h1>{{ titreTest }}</h1>
       </div>
       <div class="resultat">
-        <p><span>{{ titreResultat }}.</span></p>
+        <p><span>{{ titreResultat }}</span></p>
         <p>{{ textResultat }}</p>
       </div>
       <div class="test-details">
@@ -40,7 +40,8 @@
               <div class="commentaire-resultat">Commentaire: {{ commentaires[index] }}</div>
             </li>
           </ul>
-        <a href="" class="corriger-btn" @click.prevent="corrigerRéponses">Corriger mes réponses</a>
+        <a href="" class="second-btn" @click.prevent="corrigerRéponses">Corriger mes réponses</a>
+        <button class="second-btn" @click="envoyerResultats">Envoyer à la psychologue</butto>
         </div>
       </div>
       <div class="retour-accueil">
