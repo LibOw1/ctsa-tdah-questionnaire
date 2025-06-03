@@ -37,6 +37,9 @@
               <input type="radio" :name="'q' + questionActuelleIndex" :value="option" v-model="réponses[questionActuelleIndex]"> {{ option }}
             </label>
           </div>
+          <div class="commentaire">
+            <textarea v-model="commentaires[questionActuelleIndex]" placeholder="Votre commentaire (si vous le souhaitez)..."></textarea>
+          </div>
         </div>
         <div class="progress-container">
           <div class="progress-bar" :style="{ width: progress + '%' }"></div>
