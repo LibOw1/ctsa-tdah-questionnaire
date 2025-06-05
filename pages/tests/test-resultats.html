@@ -10,29 +10,24 @@
 <body>
   <div id="resultats">
     <header class="page-header">
-      <img src="../../assets/images/logo.png" alt="logo">
+      <a href="../../index.html" class="logo"><img src="../../assets/images/logo.png" alt="logo"></a>
       <nav>
         <a href="../page-ASRS.html" class="page-btn">Échelle ASRS</a>
         <a href="../page-Wender.html" class="page-btn">Test Wender</a>
         <a href="../page-RCTQ.html" class="page-btn">RCTQ-13</a>
         <a href="../page-UPPS.html" class="page-btn">UPPS-20</a>
         <a href="../page-CTQ.html" class="page-btn">CTQ</a>
-        <a href="../accueil.html" class="page-btn">Accueil</a>
-        <a href="" class="page-btn">Contact</a>
+        <a href="../a-propos.html" class="page-btn">À propos</a>
+        <a href="" class="page-btn-imp">Contact</a>
       </nav>
     </header>
     <main>
       <div class="titre-de-page">
-        <h1>Résultat de votre test</h1>
         <h1>{{ titreTest }}</h1>
-      </div>
-      <div class="resultat">
-        <p><span>{{ titreResultat }}</span></p>
-        <p>{{ textResultat }}</p>
       </div>
       <div class="test-details">
         <div class="test-liste">
-          <h2>Résultats détaillés</h2>
+          <h2>Détails du test</h2>
           <ul>
             <li v-for="(réponse, index) in réponses" :key="index">
               <div class="question-resultat">Question: {{ questions[index].text }}</div>
@@ -40,18 +35,18 @@
               <div class="commentaire-resultat">Commentaire: {{ commentaires[index] }}</div>
             </li>
           </ul>
-        <a href="" class="second-btn" @click.prevent="corrigerRéponses">Corriger mes réponses</a>
-        <button class="second-btn" @click="envoyerResultats">Envoyer à la psychologue</butto>
+        <button href="" class="second-btn" @click.prevent="corrigerRéponses">Corriger mes réponses</button>
+        <button class="second-btn" @click="envoyerResultats">Envoyer à la psychologue</button>
         </div>
       </div>
       <div class="retour-accueil">
         <a href="../accueil.html" class="main-btn">Retour à l'accueil</a>
       </div>
     </main>
-		<footer class="footer">
-			<a href="../docs/mentionLegale.pdf" target="_blank">Mentions légales</a>
-			<a href="../docs/CGV.pdf" target="_blank">Conditions Générales de Vente</a>
-			<a href="../docs/RGPD.pdf" target="_blank">Politique de confidentialité (RGPD)</a>
+		<footer>
+			<a href="../docs/mentionLegale.html" target="_blank">Mentions légales</a>
+			<a href="../docs/CGV.html" target="_blank">Conditions Générales de Vente</a>
+			<a href="../docs/RGPD.html" target="_blank">Politique de confidentialité (RGPD)</a>
 		</footer>
   </div>
 </body>

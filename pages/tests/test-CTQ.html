@@ -10,15 +10,15 @@
 <body>
   <div id="app">
     <header class="page-header">
-      <img src="../../assets/images/logo.png" alt="logo">
+      <a href="../../index.html" class="logo"><img src="../../assets/images/logo.png" alt="logo"></a>
       <nav>
         <a href="../page-ASRS.html" class="page-btn">Échelle ASRS</a>
         <a href="../page-Wender.html" class="page-btn">Test Wender</a>
         <a href="../page-RCTQ.html" class="page-btn">RCTQ-13</a>
         <a href="../page-UPPS.html" class="page-btn">UPPS-20</a>
         <a href="../page-CTQ.html" class="page-btn">CTQ</a>
-        <a href="../accueil.html" class="page-btn">Accueil</a>
-        <a href="" class="page-btn">Contact</a>
+        <a href="../a-propos.html" class="page-btn">À propos</a>
+        <a href="" class="page-btn-imp">Contact</a>
       </nav>
     </header>
     <main class="test-main">
@@ -30,6 +30,9 @@
         <p>Lisez chaque affirmation en pensant à votre enfance et/ou adolescence. Pour chaque phrase, cochez la case qui correspond le mieux à la fréquence avec laquelle vous avez vécu cette situation: <b>Jamais</b> – <b>Rarement</b> – <b>Quelquefois</b> – <b>Souvent</b> – <b>Très souvent</b></p>
       </div>
       <div class="test-form">
+        <div class="progress-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+        </div>
         <div class="question-block">
           <p>{{ questions[questionActuelleIndex].text }}</p>
           <div class="options">
@@ -41,11 +44,8 @@
             <textarea v-model="commentaires[questionActuelleIndex]" placeholder="Votre commentaire (si vous le souhaitez)..."></textarea>
           </div>
         </div>
-        <div class="progress-container">
-          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
-        </div>
         <div class="boutons">
-          <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>
+          <button class="main-btn" v-if="questionActuelleIndex> 0" @click="retour">Retour</button>
           <button class="main-btn" v-if="questionActuelleIndex === questions.length - 1" @click="terminer" :disabled="!toutEstFini">Terminer le test</button>
           <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivent">Suivent</button>
         </div>

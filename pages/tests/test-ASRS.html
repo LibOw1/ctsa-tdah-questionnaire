@@ -10,18 +10,18 @@
 <body>
   <div id="app">
     <header class="page-header">
-      <img src="../../assets/images/logo.png" alt="logo">
+      <a href="../../index.html" class="logo"><img src="../../assets/images/logo.png" alt="logo"></a>
       <nav>
         <a href="../page-ASRS.html" class="page-btn">Échelle ASRS</a>
         <a href="../page-Wender.html" class="page-btn">Test Wender</a>
         <a href="../page-RCTQ.html" class="page-btn">RCTQ-13</a>
         <a href="../page-UPPS.html" class="page-btn">UPPS-20</a>
         <a href="../page-CTQ.html" class="page-btn">CTQ</a>
-        <a href="../accueil.html" class="page-btn">Accueil</a>
-        <a href="" class="page-btn">Contact</a>
+        <a href="../a-propos.html" class="page-btn">À propos</a>
+        <a href="" class="page-btn-imp">Contact</a>
       </nav>
     </header>
-    <main>
+    <main class="test-main">
       <div class="titre-de-page">
         <h1>Questionnaire sur les Symptômes Actuels (ASRS)</h1>
       </div>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="boutons">
-          <button class="main-btn" v-if="questionActuelleIndex > 0" @click="retour">Retour</button>
+          <button class="main-btn" v-if="questionActuelleIndex> 0" @click="retour">Retour</button>
           <button class="main-btn" v-if="questionActuelleIndex === questions.length - 1" @click="terminer" :disabled="!toutEstFini">Terminer le test</button>
           <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivent">Suivent</button>
         </div>
