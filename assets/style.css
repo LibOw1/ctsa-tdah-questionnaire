@@ -177,7 +177,8 @@ footer a:hover {
 }
 
 .footer-content p {
-	font-size: 18px;
+	font-size: 16px;
+	line-height: 2;
 }
 
 .footer-content h2 {
@@ -185,8 +186,22 @@ footer a:hover {
 	font-weight: 1000;
 }
 
+.footer-content h3 {
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer-content h4 {
+	font-size: 24px;
+	font-weight: 600;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 .footer-content ul {
-	font-size: 18px;
+	font-size: 16px;
 	list-style-position: inside;
 	padding-left: 0;
 }
@@ -219,6 +234,20 @@ footer a:hover {
 	max-width: 1200px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+}
+
+.tableau table {
+	table-layout: fixed;
+	width: 100%;
+	max-width: 1200px;
+	border-collapse: collapse;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 20px;
+}
+
+.tableau td {
+	border: 2px solid #2a2a2a;
+	padding: 10px;
 }
 
 
