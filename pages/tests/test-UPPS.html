@@ -18,7 +18,7 @@
         <a href="../page-UPPS.html" class="page-btn">UPPS-20</a>
         <a href="../page-CTQ.html" class="page-btn">CTQ</a>
         <a href="../a-propos.html" class="page-btn">À propos</a>
-        <a href="" class="page-btn-imp">Contact</a>
+        <a href="mailto:julie.bastien.psychologue@gmail.com" class="page-btn-imp">Contact</a>
       </nav>
     </header>
     <main class="test-main">
@@ -49,7 +49,7 @@
         <div class="boutons">
           <button class="main-btn" v-if="questionActuelleIndex> 0" @click="retour">Retour</button>
           <button class="main-btn" v-if="questionActuelleIndex === questions.length - 1" @click="terminer" :disabled="!toutEstFini">Terminer le test</button>
-          <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivent">Suivent</button>
+          <button class="main-btn" v-if="questionActuelleIndex < questions.length - 1" @click="suivant">Suivant</button>
         </div>
       </div>
     </main>

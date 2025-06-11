@@ -211,12 +211,12 @@ const app = Vue.createApp({
     retour() {
       if (this.questionActuelleIndex > 0) {this.questionActuelleIndex--;}
     },
-    suivent() {
+    suivant() {
 			if (this.réponses[this.questionActuelleIndex] === '') {
 				alert('Veuillez répondre à la question actuelle avant de continuer.');
 				return;
 			}
-			console.log('testSuivent:');
+			console.log('testSuivant:');
       if (this.questionActuelleIndex < this.questions.length - 1) {this.questionActuelleIndex++;}
     },
     terminer() {
