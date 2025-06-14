@@ -58,8 +58,15 @@ const resultatsApp = Vue.createApp({
         commentaires: this.commentaires,
         points: this.points,
       };
-      let message = JSON.stringify(data, null, 2);
-      alert(message);
+      let message = this.titreTest + '\n\n';
+      for (let i = 0; i < this.questions.length; i++) {
+        message += this.questions[i].text + '\n';
+        message += 'Réponse: ' + this.réponses[i] + ' — Points: ' + this.points[i] + '\n';
+        message += 'Commentaire: ' + (this.commentaires[i] ? this.commentaires[i] : '—') + '\n\n';
+      }
+      alert(
+        message
+      );
     },
     corrigerRéponses() {
       if (this.test === 'test-ASRS') {
